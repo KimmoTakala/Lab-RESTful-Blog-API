@@ -16,7 +16,7 @@ module.exports = {
         if (!post) {
             return res.sendStatus(404)
         }
-        let commentId = store.posts.length
+        let commentId = post.comments.length
         post.comments.push({"id": commentId, "text": req.body.text})
         res.status(201).send('' + commentId)
     },
